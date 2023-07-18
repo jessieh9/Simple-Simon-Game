@@ -9,11 +9,10 @@ $(document).keypress(function () {
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
+        $(".btn").click(handleButton);
         started = true;
     }
 });
-
-$(".btn").click(handleButton);
 
 
 // helper functions here
