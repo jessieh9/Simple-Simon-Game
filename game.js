@@ -29,14 +29,16 @@ function nextSequence() {
 }
 
 function handleButton() {
-    var colorID = $(this).attr('id');
-    userPattern.push(colorID);
+    if (started === true) {
+        var colorID = $(this).attr('id');
+        userPattern.push(colorID);
 
-    $("#" + colorID).addClass("pressed");
-    setTimeout(function () { $("#" + colorID).removeClass("pressed"); },
-        100);
-    playSound(colorID);
-    checkPattern(userPattern.length - 1);
+        $("#" + colorID).addClass("pressed");
+        setTimeout(function () { $("#" + colorID).removeClass("pressed"); },
+            100);
+        playSound(colorID);
+        checkPattern(userPattern.length - 1);
+    }
 
 }
 
